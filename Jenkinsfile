@@ -50,9 +50,9 @@ pipeline {
         stage('Run Container') {
             steps {
                 sh '''
-                docker run -d ^
-                  -p 5173:5173 ^
-                  --name $CONTAINER_NAME ^
+                docker run -d \
+                  -p 5173:5173 \
+                  --name $CONTAINER_NAME \
                   $IMAGE_NAME:$IMAGE_TAG
                 '''
             }
